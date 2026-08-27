@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@theme {
+  --font-archivo: "Archivo Variable", system-ui, sans-serif;
+  --font-instrument: "Instrument Sans", system-ui, sans-serif;
+
+  --color-blk: #000000;
+  --color-pap: #FFFFFF;
+  --color-g80: #CFCFCF;
+  --color-g60: #9A9A9A;
+  --color-g45: #6E6E6E;
+  --color-rule: #2B2B2B;
+  --color-rule2: #1A1A1A;
+  --color-panel: #0B0B0B;
+}
+
+:root { color-scheme: dark; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-instrument);
+  background: var(--color-blk);
+  color: var(--color-pap);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ---- shared type primitives, mirrors the media kit ---- */
+.lbl {
+  font-family: var(--font-archivo), system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 0.625rem;
+  letter-spacing: 0.235em;
+  text-transform: uppercase;
+  color: var(--color-g45);
+  line-height: 1.4;
+}
+.tnum { font-variant-numeric: tabular-nums; }
+
+.rule-t { border-top: 1px solid var(--color-rule); }
+.rule-b { border-bottom: 1px solid var(--color-rule); }
+.rule2-t { border-top: 1px solid var(--color-rule2); }
+.rule2-b { border-bottom: 1px solid var(--color-rule2); }
+
+:where(a, button):focus-visible {
+  outline: 2px solid var(--color-pap);
+  outline-offset: 3px;
+}
+
+/* ---- deterministic grid rules (2-up on mobile, 4-up on desktop) ---- */
+.statgrid > * {
+  border-right: 1px solid var(--color-rule2);
+  border-bottom: 1px solid var(--color-rule2);
+}
+.statgrid > *:nth-child(2n) { border-right: 0; }
+.statgrid > *:nth-last-child(-n + 2) { border-bottom: 0; }
+@media (min-width: 768px) {
+  .statgrid > * { border-bottom: 0; }
+  .statgrid > *:nth-child(2n) { border-right: 1px solid var(--color-rule2); }
+  .statgrid > *:nth-child(4n) { border-right: 0; }
+}
+
+/* ---- 5-up process row (2-up on mobile) ---- */
+.procgrid > * {
+  border-right: 1px solid var(--color-rule2);
+  border-bottom: 1px solid var(--color-rule2);
+}
+.procgrid > *:nth-child(2n),
+.procgrid > *:last-child { border-right: 0; }
+.procgrid > *:last-child { border-bottom: 0; }
+@media (min-width: 768px) {
+  .procgrid > * { border-bottom: 0; border-right: 1px solid var(--color-rule2); }
+  .procgrid > *:nth-child(2n) { border-right: 1px solid var(--color-rule2); }
+  .procgrid > *:last-child { border-right: 0; }
+}
+
+/* ---- formats: top rule on the first row at every breakpoint ---- */
+.fmtgrid > * { border-bottom: 1px solid var(--color-rule2); }
+.fmtgrid > *:first-child { border-top: 1px solid var(--color-rule2); }
+@media (min-width: 640px) {
+  .fmtgrid > *:nth-child(-n + 2) { border-top: 1px solid var(--color-rule2); }
+}
+@media (min-width: 1024px) {
+  .fmtgrid > *:nth-child(-n + 3) { border-top: 1px solid var(--color-rule2); }
+}
