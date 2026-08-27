@@ -36,7 +36,7 @@ export default function Home() {
         <nav className="flex items-center gap-6">
           <a href={site.instagram} target="_blank" rel="noopener noreferrer"
             className="lbl hidden transition-colors hover:text-white sm:inline">Instagram</a>
-          <a href="#work" className="lbl whitespace-nowrap transition-colors hover:text-white">Work with us</a>
+          <a href={`mailto:${site.email}?subject=Partnership%20enquiry`} className="lbl whitespace-nowrap transition-colors hover:text-white">Work with us</a>
         </nav>
       </header>
 
@@ -45,7 +45,7 @@ export default function Home() {
         <Mark size={64} />
         <h1 style={arc}
           className="mt-9 text-[3rem] font-black uppercase leading-[0.94] tracking-[0.04em] sm:text-[4.5rem]">
-          Escape<br />Reality
+          esc8pe<br />Reality
         </h1>
         <p style={arc} className="mt-6 text-[0.72rem] font-medium uppercase tracking-[0.36em] text-[var(--color-g60)]">
           {site.handle}
@@ -57,10 +57,9 @@ export default function Home() {
           Launched fifty days ago.{" "}
           <strong className="font-semibold text-white">60 million views last month</strong> against 113,000 followers.
         </p>
-        <a href="#work" style={arc}
+        <a href={`mailto:${site.email}?subject=Partnership%20enquiry`} style={arc}
           className="mt-9 inline-flex items-center gap-3 whitespace-nowrap bg-white px-7 py-4 text-[0.72rem] font-bold uppercase tracking-[0.18em] text-black transition-opacity hover:opacity-80">
           Work with us
-          <span aria-hidden="true">&darr;</span>
         </a>
       </section>
 

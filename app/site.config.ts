@@ -4,9 +4,9 @@
  */
 export const site = {
   url: "https://esc8pe.media",
-  handle: "@esc8pe",
-  email: "partnerships@esc8pe.media",
-  instagram: "https://instagram.com/esc8pe",
+  handle: "@esc8pe.reality",
+  email: "hello@esc8pe.media",
+  instagram: "https://instagram.com/esc8pe.reality",
   mediaKit: "/escape-reality-media-kit.pdf",
   description:
     "A media brand for young people who live in gaming, technology, nostalgia and internet culture. 60 million views a month.",
