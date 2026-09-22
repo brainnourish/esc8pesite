@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  async rewrites() {
+  async redirects() {
     return [
-      { source: "/50", destination: "/50.pdf" },
-      { source: "/50/", destination: "/50.pdf" },
+      { source: "/50", destination: "/50.pdf", permanent: false },
+      { source: "/50/", destination: "/50.pdf", permanent: false },
     ];
   },
 };
