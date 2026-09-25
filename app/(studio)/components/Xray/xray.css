@@ -1,0 +1,9 @@
+/* X-RAY (press Esc) */
+.xray-grid{position:fixed;inset:0;pointer-events:none;z-index:50;padding-inline:var(--gut);display:none}
+.xray-grid .wrap{height:100%;display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(16px,2vw,28px)}
+.xray-grid .wrap i{background:rgba(255,255,255,.035);border-inline:1px solid rgba(255,255,255,.08)}
+body.xray .xray-grid{display:block}
+body.xray *:not(.xray-grid):not(.xray-grid *){outline:1px solid rgba(255,255,255,.16);outline-offset:-1px}
+body.xray h1,body.xray h2,body.xray h3,body.xray p,body.xray li{outline-color:rgba(255,255,255,.45)!important;outline-style:dashed!important}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);opacity:0;pointer-events:none;z-index:60;background:var(--paper);color:var(--ink);border-radius:999px;padding:10px 18px;font-family:var(--mono);font-size:12px;transition:transform .35s,opacity .35s;white-space:nowrap}
+body.xray .toast{opacity:1;transform:translate(-50%,0)}

@@ -1,0 +1,15 @@
+/* NAV */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;margin-inline:calc(var(--gut) * -1);padding:14px var(--gut);
+  background:rgba(0,0,0,.82);backdrop-filter:saturate(1.2) blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .3s}
+.nav.scrolled{border-bottom-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:24px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--display);font-weight:800;font-size:17px;font-variation-settings:"wdth" 112;letter-spacing:-.01em}
+.brand .mark{width:30px;height:30px;border-radius:50%;background:var(--paper);display:grid;place-items:center}
+.brand .mark svg{width:18px;height:18px}
+.brand small{font-family:var(--mono);font-weight:400;font-size:11px;color:var(--mute);letter-spacing:.08em;text-transform:uppercase;font-variation-settings:normal}
+.nav nav{margin-left:auto;display:flex;gap:26px;align-items:center}
+.nav nav a{text-decoration:none;font-size:14px;color:var(--mute);transition:color .2s}
+.nav nav a:hover{color:var(--fg)}
+.nav nav .pill{color:var(--ink);padding:8px 16px}
+.nav nav .pill:hover{color:var(--paper)}
+@media (max-width:640px){.nav nav a:not(.pill){display:none}.brand small{display:none}}

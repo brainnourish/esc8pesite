@@ -1,0 +1,44 @@
+/* Shared tokens and primitives. Values match esc8pe-studio-index.html;
+   only the font families point at the next/font variables. */
+:root{
+  color-scheme: dark;
+  --ink:#000;
+  --paper:#fff;
+  --fg:#f2f2f0;
+  --mute:#8c8c89;
+  --dim:#4a4a48;
+  --line:#1f1f1e;
+  --panel:#0b0b0b;
+  --tab:#81AC7C;
+  --display:var(--font-archivo), "Helvetica Neue", Arial, sans-serif;
+  --body:var(--font-geist), "Helvetica Neue", Arial, sans-serif;
+  --mono:var(--font-geist-mono), ui-monospace, "SF Mono", Menlo, monospace;
+  --gut:clamp(16px, 4vw, 48px);
+  --max:1320px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{
+  margin:0;background:var(--ink);color:var(--fg);
+  font-family:var(--body);font-size:17px;line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  padding-inline:var(--gut);
+  overflow-x:hidden;
+}
+a{color:inherit}
+::selection{background:var(--paper);color:var(--ink)}
+:focus-visible{outline:2px solid var(--paper);outline-offset:3px}
+.wrap{max-width:var(--max);margin-inline:auto}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+h1,h2,h3{font-family:var(--display);font-weight:800;margin:0;text-wrap:balance;letter-spacing:-.02em}
+h2{font-size:clamp(34px,5.4vw,72px);line-height:.98;font-variation-settings:"wdth" 88}
+p{margin:0}
+section{padding-block:clamp(72px,11vw,150px);border-top:1px solid var(--line)}
+
+/* PILL (nav, hero, apply) */
+.pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:11px 20px;font-size:14px;font-weight:500;text-decoration:none;border:1px solid var(--paper);transition:background .2s,color .2s;cursor:pointer;font-family:var(--body)}
+.pill.solid{background:var(--paper);color:var(--ink)}
+.pill.solid:hover{background:transparent;color:var(--paper)}
+.pill.ghost{background:transparent;color:var(--paper);border-color:var(--dim)}
+.pill.ghost:hover{border-color:var(--paper)}
